@@ -38,13 +38,13 @@
         "collection-0": {
           "type": "collection",
           "settings": {
-            "collection": "bookmarks"
+            "collection": ""
           }
         },
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "botanical-necklace"
+            "collection": ""
           }
         }
       },
