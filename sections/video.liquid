@@ -83,7 +83,13 @@
           videoTarget.innerHTML = `<iframe src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1&muted=1&background=1&loop=1" class="js-vimeo" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
         {%- endif -%}
       {%- elsif section.settings.video != null -%}
-        videoTarget.innerHTML = `{{ section.settings.video | video_tag: autoplay: true, loop: true, controls: false, muted: true | gsub: '"', '\"' | strip_newlines }}`;
+        {%- comment -%}
+          Using 'replace' instead of 'gsub' to escape quotes for the JavaScript string.
+        {%- endcomment -%}
+        {%- capture video_tag -%}
+          {{ section.settings.video | video_tag: autoplay: true, loop: true, controls: false, muted: true }}
+        {%- endcapture -%}
+        videoTarget.innerHTML = `{{ video_tag | replace: '"', '\"' | strip_newlines }}`;
       {%- endif -%}
       
       videoTarget.classList.add('is-playing');
