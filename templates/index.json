@@ -11,57 +11,17 @@
   "sections": {
     "image_banner_RtgzUD": {
       "type": "image-banner",
-      "blocks": {
-        "caption_tTHcbh": {
-          "type": "caption",
-          "settings": {
-            "caption": "Handcrafted Collection",
-            "caption_size": "caption-with-letter-spacing--medium"
-          }
-        },
-        "heading_9XQTQx": {
-          "type": "heading",
-          "settings": {
-            "heading": "Nature’s beauty, preserved in handmade art.",
-            "heading_size": "h1"
-          }
-        },
-        "text_hmMkdb": {
-          "type": "text",
-          "settings": {
-            "text": "Unique, handcrafted treasures that celebrate the beauty of the handmade. Once gone, they are truly gone.",
-            "text_style": "body"
-          }
-        },
-        "buttons_c6b3zQ": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Browse the Store",
-            "button_link_1": "shopify://collections/staff-picks",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "caption_tTHcbh",
-        "heading_9XQTQx",
-        "text_hmMkdb",
-        "buttons_c6b3zQ"
-      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "full_width": false,
         "image": "shopify://shop_images/1000007504.jpg",
-        "image_overlay_opacity": 30,
-        "image_height": "medium",
+        "image_overlay_opacity": 10,
+        "image_height": "small",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-1",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": false,
@@ -104,6 +64,12 @@
     "collage-0": {
       "type": "collage",
       "blocks": {
+        "collection_PFeYHx": {
+          "type": "collection",
+          "settings": {
+            "collection": "botanical-necklace"
+          }
+        },
         "collection-0": {
           "type": "collection",
           "settings": {
@@ -113,11 +79,12 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "botanical-necklace"
+            "collection": "botanical-earrings"
           }
         }
       },
       "block_order": [
+        "collection_PFeYHx",
         "collection-0",
         "collection-1"
       ],
@@ -129,7 +96,7 @@
         "card_styles": "product-card-wrapper",
         "color_scheme": "scheme-1",
         "padding_top": 36,
-        "padding_bottom": 0
+        "padding_bottom": 24
       }
     },
     "featured-collection": {
@@ -137,7 +104,7 @@
       "settings": {
         "collection": "all",
         "products_to_show": 4,
-        "title": "",
+        "title": "Latest Arrivals",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -145,19 +112,76 @@
         "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
-        "show_view_all": false,
+        "show_view_all": true,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 68
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "multicolumn_F3qHEd": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pBbGHh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sustainable_Roots.jpg",
+            "title": "Sustainable Roots",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6LK8YV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Hand-Painted_Soul.jpg",
+            "title": "Hand-Painted Soul",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Th7t8M": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Preserved_Nature.jpg",
+            "title": "Preserved Nature",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_pBbGHh",
+        "column_6LK8YV",
+        "column_Th7t8M"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "circle",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
@@ -165,6 +189,7 @@
     "image_banner_RtgzUD",
     "rich_text",
     "collage-0",
-    "featured-collection"
+    "featured-collection",
+    "multicolumn_F3qHEd"
   ]
 }
