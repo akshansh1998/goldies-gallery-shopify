@@ -12,6 +12,13 @@
     "image_banner_RtgzUD": {
       "type": "image-banner",
       "blocks": {
+        "caption_tTHcbh": {
+          "type": "caption",
+          "settings": {
+            "caption": "Handcrafted Collection",
+            "caption_size": "caption-with-letter-spacing--medium"
+          }
+        },
         "heading_9XQTQx": {
           "type": "heading",
           "settings": {
@@ -29,8 +36,8 @@
         "buttons_c6b3zQ": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
+            "button_label_1": "Checkout our Staff Picks",
+            "button_link_1": "shopify://collections/staff-picks",
             "button_style_secondary_1": false,
             "button_label_2": "Button label",
             "button_link_2": "",
@@ -39,6 +46,7 @@
         }
       },
       "block_order": [
+        "caption_tTHcbh",
         "heading_9XQTQx",
         "text_hmMkdb",
         "buttons_c6b3zQ"
@@ -47,7 +55,7 @@
       "settings": {
         "full_width": false,
         "image": "shopify://shop_images/1000007504.jpg",
-        "image_overlay_opacity": 70,
+        "image_overlay_opacity": 30,
         "image_height": "medium",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
@@ -56,7 +64,9 @@
         "color_scheme": "scheme-4",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
-        "show_text_below": false
+        "show_text_below": false,
+        "text_shadow": true,
+        "buttons_opacity": 100
       }
     },
     "rich_text": {
