@@ -15,28 +15,30 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Artisanal Creations, <strong>Captured in Time.</strong>",
+            "heading": "Nature’s beauty, preserved in handmade art.",
             "heading_size": "h0"
           }
         },
-        "text_Gk7Nc6": {
-          "type": "text",
+        "caption_XC7cdx": {
+          "type": "caption",
           "settings": {
-            "text": "<p>Unique, handcrafted treasures that celebrate the beauty of the handmade. Once gone, they are truly gone.</p>"
+            "caption": "Unique, handcrafted treasures that celebrate the beauty of the handmade. Once gone, they are truly gone.",
+            "text_style": "subtitle",
+            "text_size": "large"
           }
         }
       },
       "block_order": [
         "heading",
-        "text_Gk7Nc6"
+        "caption_XC7cdx"
       ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "scheme-1",
         "full_width": true,
-        "padding_top": 28,
-        "padding_bottom": 12
+        "padding_top": 48,
+        "padding_bottom": 24
       }
     },
     "collage-0": {
