@@ -117,6 +117,7 @@
     },
     "featured-collection": {
       "type": "featured-collection",
+      "name": "Latest Arrival",
       "settings": {
         "collection": "latest-arrivals",
         "products_to_show": 4,
