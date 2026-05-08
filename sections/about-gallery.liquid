@@ -3,70 +3,124 @@
 
 {%- style -%}
   .about-gallery-{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
+
+  @media screen and (min-width: 750px) {
+    .about-gallery-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
   .about-gallery__content {
-    max-width: 800px;
+    max-width: 80rem;
     margin: 0 auto;
     text-align: center;
   }
+
   .about-gallery__quote {
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: rgba(var(--color-foreground), 0.75);
     margin: 4rem 0;
-    border-left: 2px solid rgba(var(--color-foreground), 0.2);
+    border-left: 3px solid rgba(var(--color-foreground), 0.2);
     padding-left: 2rem;
     text-align: left;
+    line-height: 1.4;
   }
+
   .about-gallery__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    margin-top: 5rem;
+    margin-top: 6rem;
   }
+
   @media screen and (max-width: 749px) {
     .about-gallery__grid {
       grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .about-gallery__grid--reverse {
+      display: flex;
+      flex-direction: column-reverse;
     }
   }
+
   .about-gallery__image img {
     border-radius: var(--media-radius);
     box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity));
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-gallery__text h2 {
+    margin-bottom: 2rem;
   }
 {%- endstyle -%}
 
 <div class="about-gallery-{{ section.id }} page-width">
   <div class="about-gallery__content">
-    <h1 class="h0">{{ section.settings.main_heading }}</h1>
-    <div class="about-gallery__quote">
-      "{{ section.settings.brand_quote }}"
-    </div>
-    <div class="rte">
-      {{ section.settings.intro_text }}
-    </div>
+    {%- if section.settings.main_heading != blank -%}
+      <h1 class="inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.main_heading }}
+      </h1>
+    {%- endif -%}
+
+    {%- if section.settings.brand_quote != blank -%}
+      <div class="about-gallery__quote">
+        "{{ section.settings.brand_quote | escape }}"
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.intro_text != blank -%}
+      <div class="rte">
+        {{ section.settings.intro_text }}
+      </div>
+    {%- endif -%}
   </div>
 
   {%- for block in section.blocks -%}
-    <div class="about-gallery__grid" {{ block.shopify_attributes }}>
+    <div class="about-gallery__grid {% if block.settings.layout == 'right' %}about-gallery__grid--reverse{% endif %}" {{ block.shopify_attributes }}>
+      
       {%- if block.settings.layout == 'left' -%}
-        <div class="about-gallery__image media media--transparent">
-          {{ block.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', sizes: '50vw', widths: '375, 750, 1100, 1500' }}
+        <div class="about-gallery__image">
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 1500 | image_tag: 
+                loading: 'lazy', 
+                sizes: '(min-width: 750px) 50vw, 100vw', 
+                widths: '375, 750, 1100, 1500' 
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
         </div>
       {%- endif -%}
 
       <div class="about-gallery__text">
-        <h2 class="h1">{{ block.settings.heading }}</h2>
+        <h2 class="h1">{{ block.settings.heading | escape }}</h2>
         <div class="rte">{{ block.settings.text }}</div>
       </div>
 
       {%- if block.settings.layout == 'right' -%}
-        <div class="about-gallery__image media media--transparent">
-          {{ block.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', sizes: '50vw', widths: '375, 750, 1100, 1500' }}
+        <div class="about-gallery__image">
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 1500 | image_tag: 
+                loading: 'lazy', 
+                sizes: '(min-width: 750px) 50vw, 100vw', 
+                widths: '375, 750, 1100, 1500' 
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
         </div>
       {%- endif -%}
+      
     </div>
   {%- endfor -%}
 </div>
@@ -74,12 +128,25 @@
 {% schema %}
 {
   "name": "About Gallery Layout",
+  "tag": "section",
+  "class": "section",
   "settings": [
     {
       "type": "inline_richtext",
       "id": "main_heading",
       "default": "Welcome to Goldie’s Gallery",
       "label": "Main Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
     },
     {
       "type": "text",
@@ -92,6 +159,10 @@
       "id": "intro_text",
       "label": "Intro Paragraph",
       "default": "<p>At Goldie's Gallery, we believe that the most beautiful things in the world aren't made by machines in a factory—they are grown in the earth and crafted by human hands.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
     },
     {
       "type": "range",
@@ -115,13 +186,22 @@
         {
           "type": "select",
           "id": "layout",
+          "label": "Desktop Image Placement",
           "options": [
             { "value": "left", "label": "Image Left" },
             { "value": "right", "label": "Image Right" }
           ],
-          "default": "left",
-          "label": "Desktop Image Placement"
+          "default": "left"
         }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Gallery Layout",
+      "blocks": [
+        { "type": "content_row" },
+        { "type": "content_row" }
       ]
     }
   ]
