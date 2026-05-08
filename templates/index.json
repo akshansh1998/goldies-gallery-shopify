@@ -9,6 +9,56 @@
  */
 {
   "sections": {
+    "image_banner_RtgzUD": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_9XQTQx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nature’s beauty, preserved in handmade art.",
+            "heading_size": "h1"
+          }
+        },
+        "text_hmMkdb": {
+          "type": "text",
+          "settings": {
+            "text": "Unique, handcrafted treasures that celebrate the beauty of the handmade. Once gone, they are truly gone.",
+            "text_style": "body"
+          }
+        },
+        "buttons_c6b3zQ": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9XQTQx",
+        "text_hmMkdb",
+        "buttons_c6b3zQ"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "full_width": false,
+        "image": "shopify://shop_images/1000007504.jpg",
+        "image_overlay_opacity": 70,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -102,6 +152,7 @@
     }
   },
   "order": [
+    "image_banner_RtgzUD",
     "rich_text",
     "collage-0",
     "featured-collection"
