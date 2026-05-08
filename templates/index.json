@@ -18,10 +18,17 @@
             "heading": "Artisanal Creations, <strong>Captured in Time.</strong>",
             "heading_size": "h0"
           }
+        },
+        "text_Gk7Nc6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Unique, handcrafted treasures that celebrate the beauty of the handmade. Once gone, they are truly gone.</p>"
+          }
         }
       },
       "block_order": [
-        "heading"
+        "heading",
+        "text_Gk7Nc6"
       ],
       "settings": {
         "desktop_content_position": "center",
