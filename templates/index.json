@@ -29,6 +29,22 @@
         "buttons_opacity": 100
       }
     },
+    "video_i8JWVn": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/1000007501.jpg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -135,7 +151,7 @@
           "settings": {
             "image": "shopify://shop_images/Sustainable_Roots.jpg",
             "title": "Sustainable Roots",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Every creation begins with a purpose. We believe in beauty with a footprint, sourcing eco-conscious materials and repurposing glass bottles to transform the overlooked into the extraordinary.</p>",
             "link_label": "",
             "link": ""
           }
@@ -145,7 +161,7 @@
           "settings": {
             "image": "shopify://shop_images/Hand-Painted_Soul.jpg",
             "title": "Hand-Painted Soul",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Art is in the details. Each stroke of the brush is a moment of focused intention, ensuring that every bottle and bookmark carries the unique heartbeat of the artist who brought it to life.</p>",
             "link_label": "",
             "link": ""
           }
@@ -155,7 +171,7 @@
           "settings": {
             "image": "shopify://shop_images/Preserved_Nature.jpg",
             "title": "Preserved Nature",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Capturing the ephemeral. Using high-clarity resin, we freeze the delicate beauty of real dried flowers in time, allowing you to carry a permanent piece of the natural world wherever you go.</p>",
             "link_label": "",
             "link": ""
           }
@@ -177,7 +193,7 @@
         "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "none",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 64,
@@ -187,6 +203,7 @@
   },
   "order": [
     "image_banner_RtgzUD",
+    "video_i8JWVn",
     "rich_text",
     "collage-0",
     "featured-collection",
