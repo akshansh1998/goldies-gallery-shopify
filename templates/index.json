@@ -36,7 +36,7 @@
         "buttons_c6b3zQ": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Checkout our Staff Picks",
+            "button_label_1": "Browse the Store",
             "button_link_1": "shopify://collections/staff-picks",
             "button_style_secondary_1": false,
             "button_label_2": "Button label",
