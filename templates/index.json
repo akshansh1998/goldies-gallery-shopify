@@ -118,7 +118,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "all",
+        "collection": "latest-arrivals",
         "products_to_show": 4,
         "title": "Latest Arrivals",
         "heading_size": "h2",
